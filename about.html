@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About - Diabetes Prediction</title>
+  <style>
+    /* CSS Styles */
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      
+      header {
+        background-color: #1e416d;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+      }
+      
+      /* Add keyframes for fade-in animation */
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      nav {
+        background-color: #0f3057;
+        padding: 10px;
+        animation: slideInDown 1s ease-in-out;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+      
+      /* Add keyframes for slide-in animation */
+      @keyframes slideInDown {
+        from { transform: translateY(-100%); }
+        to { transform: translateY(0); }
+      }
+      
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+      
+      nav ul li {
+        display: inline;
+        margin-right: 10px;
+      }
+      
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      
+      nav ul li a:hover {
+        background-color: #3282b8;
+      }
+      
+      main {
+        padding: 20px;
+        animation: zoomIn 1s ease-in-out;
+      }
+
+    h2 {
+      margin-top: 0;
+      color: #1d3557;
+      max-width: 400px;
+        margin: 0 auto;
+        border: 2px solid rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 4px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    p {
+      margin-bottom: 20px;
+      color: #1d3557;
+      max-width: 400px;
+        margin: 0 auto;
+        border: 2px solid rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 4px;
+        background-color: rgb(255, 255, 255);
+      
+    }
+
+    footer {
+      background-color: #1d3557;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .social-links {
+        text-align: center;
+        margin-top: 30px;
+    }
+  
+    .social-links a {
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 24px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+  
+    .social-links a:hover {
+        color: #0f3057;
+    }
+
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1E90FF;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Add keyframes for fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    main {
+      padding: 20px;
+      animation: slideInUp 1s ease-in-out;
+    }
+
+    /* Add keyframes for slide-in animation */
+    @keyframes slideInUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    h2 {
+      margin-top: 0;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    p {
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      animation: slideInDown 1s ease-in-out;
+    }
+
+    /* Add keyframes for slide-in animation */
+    @keyframes slideInDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Social Links Animation */
+    .social-links {
+      display: inline-block;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    /* Delayed animation for individual social links */
+    .social-links a:nth-child(1) { animation-delay: 0.3s; }
+    .social-links a:nth-child(2) { animation-delay: 0.4s; }
+    .social-links a:nth-child(3) { animation-delay: 0.5s; }
+    .social-links a:nth-child(4) { animation-delay: 0.6s; }
+    .social-links a:nth-child(5) { animation-delay: 0.7s; }
+    .social-links a:nth-child(6) { animation-delay: 0.8s; }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 24px;
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+      color: #0f3057;
+      transform: scale(1.2);
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Diabetes Prediction</h1>
+    <div class="social-links">
+      <a href="mailto:adhipmukherjee12@gmail.com"><i class="far fa-envelope"></i></a>
+      <a href="https://www.instagram.com/chromeslugx/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/chromeslugs" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/adhip-mukhopadhyay-2a4456199/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/adhipmukherjee" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.reddit.com/user/knightr0gen_" target="_blank"><i class="fab fa-reddit"></i></a>
+      <!-- Add more social media links as needed -->
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="graph.html">My Work</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>About the Web App</h2>
+    <p>
+      The Diabetes Prediction web app is a tool designed to predict an individual's risk of developing diabetes based on various factors such as age, gender, body mass index (BMI), blood pressure, glucose level, and family history of diabetes.
+    </p>
+    <p>
+      The app utilizes a machine learning model trained on a dataset of diabetes patients. The model has been trained to classify individuals as either having a high risk or a low risk of developing diabetes based on the provided inputs.
+    </p>
+
+    <h2>How to Use</h2>
+    <p>
+      To use the prediction tool, navigate to the "Prediction Tool" section of the web app. Fill in the required information, such as age, gender, BMI, blood pressure, glucose level, and indicate if there is a family history of diabetes. Upon submitting the form, the model will generate a prediction of your risk of developing diabetes.
+    </p>
+
+    <h2>Data Privacy</h2>
+    <p>
+      We take data privacy seriously. The information you provide in the prediction tool is solely used for the purpose of generating the prediction result. We do not store or share any personally identifiable information.
+    </p>
+
+    <h2>About the Dataset and Model</h2>
+    <p>
+      The machine learning model used in this web app has been trained on a carefully curated dataset of diabetes patients. The dataset contains various health-related attributes of individuals and whether they have been diagnosed with diabetes or not. The model has been trained to make predictions based on this historical data, but please note that it may not be 100% accurate for all individuals.
+    </p>
+  </main>
+
+  <footer>
+    <p1>&copy; 2023 Diabetes Prediction. All rights reserved.</p1>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-BqoCgok+D2C1OiX2oRzvGe0j0Vt4A2NjYoD68Pr4e0Lj0x+PzJTQ0UzTWClzfvlhRUz6nxbzj1CHBQuLYR7SwQ==" crossorigin="anonymous" />
+</body>
+</html>

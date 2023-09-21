@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diabetes Prediction - Graphs</title>
+  <style>
+    /* CSS Styles */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    header {
+      background-color: #1E90FF;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Add keyframes for fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      background-color: #0f3057;
+      padding: 10px;
+      animation: slideInDown 1s ease-in-out;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    /* Add keyframes for slide-in animation */
+    @keyframes slideInDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    nav ul li a:hover {
+      background-color: #3282b8;
+    }
+
+    main {
+      padding: 20px;
+      animation: zoomIn 1s ease-in-out;
+    }
+
+    /* Add keyframes for zoom-in animation */
+    @keyframes zoomIn {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .visualization {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-in-out;
+      position: relative;
+    }
+
+    /* Add keyframes for fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .visualization h3 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .visualization img {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .visualization .tooltip {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+      z-index: 999;
+    }
+
+    footer {
+      background-color: #0f3057;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Custom Styles */
+
+    /* Animated Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .visualization .tooltip {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .paragraph {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease-in-out;
+      margin: 0 auto;
+        border: 2px solid rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 4px;
+        background-color: rgb(255, 255, 255);
+    }
+    .social-links {
+      text-align: center;
+      margin-top: 30px;
+  }
+  /* Delayed animation for individual social links */
+  .social-links a:nth-child(1) { animation-delay: 0.3s; }
+  .social-links a:nth-child(2) { animation-delay: 0.4s; }
+  .social-links a:nth-child(3) { animation-delay: 0.5s; }
+  .social-links a:nth-child(4) { animation-delay: 0.6s; }
+  .social-links a:nth-child(5) { animation-delay: 0.7s; }
+  .social-links a:nth-child(6) { animation-delay: 0.8s; }
+
+  .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 24px;
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+      color: #0f3057;
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="font-size: 32px;">Diabetes Prediction - Jupyter Notebook</h1>
+    <p style="font-size: 18px;">Visualized data related to diabetes</p>
+    <div class="social-links">
+      <a href="mailto:adhipmukherjee12@gmail.com"><i class="far fa-envelope"></i></a>
+      <a href="https://www.instagram.com/chromeslugx/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/chromeslugs" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/adhip-mukhopadhyay-2a4456199/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/adhipmukherjee" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.reddit.com/user/knightr0gen_" target="_blank"><i class="fab fa-reddit"></i></a>
+      <!-- Add more social media links as needed -->
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">My Work</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="paragraph">
+      <p>Step 1: Importing Libraries</p>
+      <p>Step 2: Importing Dataset</p>
+      <p>Step 3: Descriptive Statistics</p>
+      <p>Step 4: Data Visualization</p>
+      <p>Step 5: Data Preprocessing</p>
+      <p>Step 6: Data Modelling</p>
+      <p>Step 7: Model Evaluation</p>
+
+      <li><a href="prediction.html">Click here to see the Notebook!</a></li>
+    </div>
+      
+
+
+    <div class="visualization">
+      <h3>Confusion Matrix</h3>
+      <img src="confusion_matrix.png" alt="Confusion Matrix" data-tooltip="Tooltip content for Confusion Matrix">
+      <div class="tooltip"></div>
+    </div>
+
+    <div class="visualization">
+      <h3>Countplot</h3>
+      <img src="countplot.png" alt="Countplot" data-tooltip="Tooltip content for Countplot">
+      <div class="tooltip"></div>
+    </div>
+
+    <div class="visualization">
+      <h3>Heatmap</h3>
+      <img src="heatmap.png" alt="Heatmap" data-tooltip="Tooltip content for Heatmap">
+      <div class="tooltip"></div>
+    </div>
+
+    <div class="visualization">
+      <h3>Histogram</h3>
+      <img src="histogram.png" alt="Histogram" data-tooltip="Tooltip content for Histogram">
+      <div class="tooltip"></div>
+    </div>
+
+    <div class="visualization">
+      <h3>Pairplot</h3>
+      <img src="pairplot.png" alt="Pairplot" data-tooltip="Tooltip content for Pairplot">
+      <div class="tooltip"></div>
+    </div>
+
+    <div class="visualization">
+      <h3>Scatterplot</h3>
+      <img src="scatterplot.png" alt="Scatterplot" data-tooltip="Tooltip content for Scatterplot">
+      <div class="tooltip"></div>
+    </div>
+
+    <div class="visualization">
+      <h3>Finding Best Value for n_estimators</h3>
+      <img src="value.png" alt="Finding Best Value for n_estimators" data-tooltip="Tooltip content for Finding Best Value for n_estimators">
+      <div class="tooltip"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Diabetes Prediction. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
+
+  <script>
+    // JavaScript code for handling tooltip functionality
+    const graphs = document.querySelectorAll('.visualization img');
+  
+    graphs.forEach(graph => {
+      const tooltip = graph.nextElementSibling;
+  
+      graph.addEventListener('mousemove', function(event) {
+        const rect = this.getBoundingClientRect();
+        const mouseX = event.clientX - rect.left;
+        const mouseY = event.clientY - rect.top;
+        const xValue = calculateXValue(mouseX); // Replace with your own logic to calculate the x value
+        const yValue = calculateYValue(mouseY); // Replace with your own logic to calculate the y value
+        const tooltipContent = `X: ${xValue}, Y: ${yValue}`;
+  
+        tooltip.style.display = 'block';
+        tooltip.textContent = tooltipContent;
+        tooltip.style.left = `${event.clientX}px`;
+        tooltip.style.top = `${event.clientY}px`;
+      });
+  
+      graph.addEventListener('mouseout', function(event) {
+        tooltip.style.display = 'none';
+        tooltip.textContent = '';
+      });
+    });
+  </script>
+  
+  

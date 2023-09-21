@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diabetes Prediction</title>
+  <style>
+    /* Add your CSS styles here */
+    /* ... */
+
+    /* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a background image */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Header styles */
+header {
+  background-color: #1E90FF;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 36px;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #0f3057;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #3282b8;
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #1d3557;
+  font-weight: bold;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label {
+  margin-left: 5px;
+  color: #1d3557;
+  font-size: 16px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0f3057;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="reset"] {
+  margin-top: 10px;
+  background-color: #DC143C;
+}
+
+form button[type="reset"]:hover {
+  background-color: #FF0000;
+}
+
+/* Prediction results styles */
+#prediction-results {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: none;
+  background-color: #f1f1f1;
+}
+
+#prediction-results h2 {
+  margin-top: 0;
+  color: #1d3557;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#prediction-results p {
+  margin-bottom: 10px;
+  color: #1d3557;
+  font-size: 18px;
+}
+
+#prediction-results p#bmi-result {
+  font-weight: bold;
+}
+
+/* Footer styles */
+footer {
+  background-color: #0f3057;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Social media links styles */
+.social-links {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 24px;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #6d0e24;
+}
+
+/* Animation for social links */
+.social-links a:nth-child(1) { animation-delay: 0.3s; }
+.social-links a:nth-child(2) { animation-delay: 0.4s; }
+.social-links a:nth-child(3) { animation-delay: 0.5s; }
+.social-links a:nth-child(4) { animation-delay: 0.6s; }
+.social-links a:nth-child(5) { animation-delay: 0.7s; }
+.social-links a:nth-child(6) { animation-delay: 0.8s; }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Diabetes Prediction</h1>
+    <p>Predict your risk of developing diabetes</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="graph.html">My Work</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <form id="prediction-form">
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="weight">Weight (in kg):</label>
+      <input type="number" id="weight" name="weight" placeholder="Enter your weight" required>
+
+      <label for="height">Height (in cm):</label>
+      <input type="number" id="height" name="height" placeholder="Enter your height" required>
+
+      <label for="systolic-bp">Systolic Blood Pressure:</label>
+      <input type="number" id="systolic-bp" name="systolic-bp" placeholder="Enter your systolic BP" required>
+
+      <label for="diastolic-bp">Diastolic Blood Pressure:</label>
+      <input type="number" id="diastolic-bp" name="diastolic-bp" placeholder="Enter your diastolic BP" required>
+
+      <label for="glucose">Glucose:</label>
+      <input type="number" id="glucose" name="glucose" placeholder="Enter your glucose level" required>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="family-history" name="family-history">
+        <label class="checkbox-label" for="family-history">Family History of Diabetes</label>
+      </div>
+
+      <button type="button" id="predict-button">Predict</button>
+      <button type="reset">Reset</button>
+    </form>
+
+    <div id="prediction-results">
+      <h2>Prediction Results</h2>
+      <p id="result-text"></p>
+      <p id="recommendation"></p>
+      <p id="bmi-result"></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Diabetes Prediction. All rights reserved.</p>
+  </footer>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script> -->
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-BqoCgok+D2C1OiX2oRzvGe0j0Vt4A2NjYoD68Pr4e0Lj0x+PzJTQ0UzTWClzfvlhRUz6nxbzj1CHBQuLYR7SwQ==" crossorigin="anonymous" /> -->
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var predictButton = document.getElementById("predict-button");
+      
+      predictButton.addEventListener("click", function() {
+        // Retrieve form inputs
+        var age = parseFloat(document.getElementById("age").value);
+        var weight = parseFloat(document.getElementById("weight").value);
+        var height = parseFloat(document.getElementById("height").value);
+        var systolicBp = parseFloat(document.getElementById("systolic-bp").value);
+        var diastolicBp = parseFloat(document.getElementById("diastolic-bp").value);
+        var glucose = parseFloat(document.getElementById("glucose").value);
+        
+        // Calculate BMI
+        var heightMeters = height / 100; // Convert height from cm to meters
+        var bmi = weight / (heightMeters * heightMeters);
+        bmi = bmi.toFixed(2); // Round BMI to 2 decimal places
+      
+        // Initialize prediction result and recommendation
+        var predictionResult = "";
+        var recommendation = "";
+      
+        // Perform the prediction logic based on BMI and glucose
+        if (bmi >= 25 && glucose > 140) {
+            predictionResult = "High Risk";
+            recommendation = "You are at high risk of developing diabetes. We recommend you consult a healthcare professional.";
+        } else {
+            predictionResult = "Low Risk";
+            recommendation = "You are at low risk of developing diabetes. Continue with a healthy lifestyle.";
+        }
+      
+        // Display prediction result in UI
+        document.getElementById("prediction-results").style.display = "block"; // Show the results container
+        document.getElementById("result-text").innerHTML = "Prediction Result: " + predictionResult;
+        document.getElementById("recommendation").innerHTML = "Recommendation: " + recommendation;
+        
+        // Display BMI result in UI
+        document.getElementById("bmi-result").innerHTML = "BMI: " + bmi;
+      });
+    });
+    
+  
+  </script>
+</body>
+</html>
