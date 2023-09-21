@@ -1,4 +1,4 @@
-# DPredict
+# [DPredict](#https://dpredict.netlify.app/)
 # Diabetes Prediction Web App
 
 Predict your risk of developing diabetes with this simple web application.
